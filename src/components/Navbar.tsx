@@ -24,9 +24,9 @@ const Navbar = () => {
       <div className="bg-navy text-navy-foreground text-sm py-2">
         <div className="container flex items-center justify-between">
           <span>Serving Dallas & Surrounding Areas</span>
-          <a href="tel:+12145551234" className="flex items-center gap-1.5 font-semibold hover:text-accent transition-colors">
+          <a href="tel:+14694500614" className="flex items-center gap-1.5 font-semibold hover:text-accent transition-colors">
             <Phone className="w-3.5 h-3.5" />
-            (214) 555-1234
+            (469) 450-0614
           </a>
         </div>
       </div>
@@ -35,11 +35,11 @@ const Navbar = () => {
       <nav className="bg-background border-b border-border sticky top-0 z-50">
         <div className="container flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Dallas Air Experts" className="h-10 w-10" />
+            <img src={logo} alt="Saul Ramirez Heating & A/C" className="h-10 w-10" />
             <div className="font-heading font-bold text-lg leading-tight">
-              <span className="text-primary">Dallas Air</span>
+              <span className="text-primary">Saul Ramirez</span>
               <br className="hidden sm:block" />
-              <span className="text-foreground"> Experts</span>
+              <span className="text-foreground"> Heating & A/C</span>
             </div>
           </Link>
 
@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
 
           <a
-            href="tel:+12145551234"
+            href="tel:+14694500614"
             className="hidden lg:flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             <Phone className="w-4 h-4" />
@@ -97,11 +97,11 @@ const Navbar = () => {
             ))}
             <div className="px-6 pt-3">
               <a
-                href="tel:+12145551234"
+                href="tel:+14694500614"
                 className="flex items-center justify-center gap-2 bg-accent text-accent-foreground px-5 py-3 rounded-lg font-semibold text-sm"
               >
                 <Phone className="w-4 h-4" />
-                (214) 555-1234
+                (469) 450-0614
               </a>
             </div>
           </div>

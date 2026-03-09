@@ -4,12 +4,12 @@ import { Phone, Mail, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-navy text-navy-foreground">
-      <div className="container py-16">
+      <div className="container py-20 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <h3 className="font-heading font-bold text-xl mb-4">Dallas Air Experts</h3>
+            <h3 className="font-heading font-bold text-xl mb-4">Saul Ramirez Heating & A/C</h3>
             <p className="text-sm opacity-80 leading-relaxed">
-              Your trusted HVAC partner in Dallas, TX. Licensed, insured, and committed to your comfort since 2005.
+              Your trusted HVAC partner in Dallas, TX. Fast response HVAC repair, installation, and maintenance services.
             </p>
           </div>
 
@@ -37,15 +37,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm opacity-80">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 shrink-0" />
-                <a href="tel:+12145551234" className="hover:opacity-100">(214) 555-1234</a>
+                <a href="tel:+14694500614" className="hover:opacity-100">(469) 450-0614</a>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 shrink-0" />
-                <a href="mailto:info@dallasairexperts.com" className="hover:opacity-100">info@dallasairexperts.com</a>
+                <a href="mailto:info@saulramirezhvac.com" className="hover:opacity-100">info@saulramirezhvac.com</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>Dallas, Texas</span>
+                <span>1457 Cibola Dr, Dallas, Texas</span>
               </li>
             </ul>
           </div>
@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
       <div className="border-t border-muted-foreground/20">
         <div className="container py-6 text-center text-sm opacity-60">
-          © {new Date().getFullYear()} Dallas Air Experts. All rights reserved. Licensed & Insured.
+          © {new Date().getFullYear()} Saul Ramirez Heating & A/C. All rights reserved. Licensed & Insured.
         </div>
       </div>
     </footer>
