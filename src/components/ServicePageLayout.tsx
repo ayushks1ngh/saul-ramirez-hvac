@@ -23,7 +23,7 @@ const ServicePageLayout = ({ title, subtitle, description, image, features, bene
             <p className="text-muted-foreground leading-relaxed mb-8">{description}</p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:+12145551234"
+                href="tel:+14694500614"
                 className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
               >
                 <Phone className="w-4 h-4" /> Call Now
@@ -59,7 +59,7 @@ const ServicePageLayout = ({ title, subtitle, description, image, features, bene
             </ul>
           </div>
           <div>
-            <h2 className="font-heading font-bold text-2xl md:text-3xl text-foreground mb-6">Why Dallas Air Experts?</h2>
+            <h2 className="font-heading font-bold text-2xl md:text-3xl text-foreground mb-6">Why Saul Ramirez Heating & A/C?</h2>
             <ul className="space-y-4">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3">

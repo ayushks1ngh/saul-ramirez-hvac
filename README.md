@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# Saul Ramirez Heating & A/C — Full-Stack Application
 
-## Project info
+## Quick Start
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+```bash
+# Start all services
+docker compose up --build
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Access:
+# Frontend:  http://localhost:3000
+# Backend:   http://localhost:8000
+# API Docs:  http://localhost:8000/docs
+# Admin:     http://localhost:3000/admin
 ```
 
-**Edit a file directly in GitHub**
+Default admin credentials:
+- Email: `admin@saulramirezhvac.com`
+- Password: `changeme123`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development (without Docker)
 
-**Use GitHub Codespaces**
+### Frontend
+```bash
+npm install
+npm run dev          # http://localhost:5173
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+# Start PostgreSQL and Redis locally first
+cp .env.example .env  # Edit DATABASE_URL/REDIS_URL for local
+uvicorn app.main:app --reload --port 8000
+```
 
-## What technologies are used for this project?
+### Background Worker
+```bash
+cd backend
+python -m app.workers.email_worker
+```
 
-This project is built with:
+## Tech Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18 + Vite + TypeScript + Tailwind + shadcn/ui |
+| Backend | FastAPI + SQLAlchemy + Pydantic |
+| Database | PostgreSQL 16 |
+| Cache/Queue | Redis 7 |
+| Deployment | Docker Compose |
 
-## How can I deploy this project?
+## Testing
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+# Frontend
+npm test
 
-## Can I connect a custom domain to my Lovable project?
+# Backend
+cd backend && pytest
+```
 
-Yes, you can!
+## Documentation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — System design
+- [DATABASE.md](./DATABASE.md) — Schema and migrations
+- [API.md](./API.md) — Endpoint reference
+- [BACKGROUND_JOBS.md](./BACKGROUND_JOBS.md) — Queue architecture
+- [SECURITY.md](./SECURITY.md) — Auth and security model
+- [LEARN_THIS_FIRST.md](./LEARN_THIS_FIRST.md) — Backend engineering guide

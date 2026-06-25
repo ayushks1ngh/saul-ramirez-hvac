@@ -18,7 +18,7 @@ const ServiceAreas = () => (
           HVAC Service Areas in Dallas-Fort Worth
         </h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Dallas Air Experts proudly provides heating, cooling, and air quality services throughout the DFW metroplex. If you don't see your city listed, give us a call — we likely serve your area too.
+          Saul Ramirez Heating & A/C proudly provides heating, cooling, and air quality services throughout the DFW metroplex. If you don't see your city listed, give us a call — we likely serve your area too.
         </p>
       </div>
     </section>
@@ -36,10 +36,10 @@ const ServiceAreas = () => (
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Don't see your area? Call us to check availability.</p>
           <a
-            href="tel:+12145551234"
+            href="tel:+14694500614"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
-            <Phone className="w-4 h-4" /> (214) 555-1234
+            <Phone className="w-4 h-4" /> (469) 450-0614
           </a>
         </div>
       </div>

@@ -11,11 +11,11 @@ const EmergencyBanner = () => (
         Don't suffer in the heat or cold. Our emergency technicians are available around the clock.
       </p>
       <a
-        href="tel:+12145551234"
+        href="tel:+14694500614"
         className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-3 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity"
       >
         <Phone className="w-5 h-5" />
-        (214) 555-1234
+        (469) 450-0614
       </a>
     </div>
   </section>
