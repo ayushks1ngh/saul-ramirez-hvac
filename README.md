@@ -1,70 +1,95 @@
-# Saul Ramirez Heating & A/C — Full-Stack Application
+# Saul Ramirez Heating & A/C
 
-## Quick Start
+Business website for Saul Ramirez Heating & A/C — Dallas-Fort Worth HVAC services.
 
-```bash
-# Start all services
-docker compose up --build
+## Live Site
 
-# Access:
-# Frontend:  http://localhost:3000
-# Backend:   http://localhost:8000
-# API Docs:  http://localhost:8000/docs
-# Admin:     http://localhost:3000/admin
-```
+Deploy the frontend to [Vercel](https://vercel.com):
 
-Default admin credentials:
-- Email: `admin@saulramirezhvac.com`
-- Password: `changeme123`
-
-## Development (without Docker)
-
-### Frontend
-```bash
-npm install
-npm run dev          # http://localhost:5173
-```
-
-### Backend
-```bash
-cd backend
-pip install -r requirements.txt
-# Start PostgreSQL and Redis locally first
-cp .env.example .env  # Edit DATABASE_URL/REDIS_URL for local
-uvicorn app.main:app --reload --port 8000
-```
-
-### Background Worker
-```bash
-cd backend
-python -m app.workers.email_worker
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/saul-ramirez-hvac)
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 18 + Vite + TypeScript + Tailwind + shadcn/ui |
-| Backend | FastAPI + SQLAlchemy + Pydantic |
+| Frontend | React 18, Vite, TypeScript, Tailwind CSS |
+| Backend | FastAPI, SQLAlchemy, Pydantic |
 | Database | PostgreSQL 16 |
 | Cache/Queue | Redis 7 |
-| Deployment | Docker Compose |
+| Deployment | Vercel (frontend), Docker Compose (full stack) |
 
-## Testing
+## Development
 
 ```bash
-# Frontend
-npm test
+npm install
+npm run dev          # http://localhost:5173
+```
 
-# Backend
-cd backend && pytest
+### With Backend (Docker)
+
+```bash
+docker compose up --build
+
+# Frontend:  http://localhost:3000
+# Backend:   http://localhost:8000
+# API Docs:  http://localhost:8000/docs
+```
+
+Default admin: `admin@saulramirezhvac.com` / `changeme123`
+
+## Scripts
+
+```bash
+npm run dev       # Dev server
+npm run build     # Production build
+npm run preview   # Preview production build
+npm run lint      # ESLint
+npm test          # Run tests
+```
+
+## Deployment
+
+### Vercel (Frontend Only)
+
+1. Push to GitHub
+2. Import in Vercel dashboard
+3. Framework preset: Vite
+4. Deploy — done
+
+The `vercel.json` handles SPA routing automatically.
+
+### Full Stack (Docker)
+
+```bash
+docker compose up --build -d
+```
+
+Set real secrets in `backend/.env`:
+```
+SECRET_KEY=<openssl rand -hex 32>
+ADMIN_PASSWORD=<strong password>
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/     # Shared UI components
+│   ├── pages/          # Route pages
+│   ├── lib/            # API client, utilities
+│   └── test/           # Vitest tests
+├── backend/            # FastAPI application
+│   ├── app/api/        # Route handlers
+│   ├── app/models/     # SQLAlchemy models
+│   ├── app/schemas/    # Pydantic validation
+│   └── app/workers/    # Background jobs
+├── vercel.json         # Vercel SPA config
+└── docker-compose.yml  # Full-stack deployment
 ```
 
 ## Documentation
 
 - [ARCHITECTURE.md](./ARCHITECTURE.md) — System design
-- [DATABASE.md](./DATABASE.md) — Schema and migrations
-- [API.md](./API.md) — Endpoint reference
-- [BACKGROUND_JOBS.md](./BACKGROUND_JOBS.md) — Queue architecture
-- [SECURITY.md](./SECURITY.md) — Auth and security model
-- [LEARN_THIS_FIRST.md](./LEARN_THIS_FIRST.md) — Backend engineering guide
+- [API.md](./API.md) — Backend endpoints
+- [DATABASE.md](./DATABASE.md) — Schema reference
+- [SECURITY.md](./SECURITY.md) — Auth model
